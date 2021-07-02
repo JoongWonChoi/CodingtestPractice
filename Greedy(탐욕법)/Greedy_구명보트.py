@@ -30,7 +30,7 @@ def solution(people, limit):
     i = 0
     while i<len(people):
         if i==k:#사람 한 명 남았을 때(바닥조건)
-            answer += 1
+            answer += 1 #무조건 한번 더 운행 하고 종료
             break
             #사람이 한 명 남은 경우 무조건 보트로 1회 옮겨야 함.
         else: #마지막 사람 전의 경우
