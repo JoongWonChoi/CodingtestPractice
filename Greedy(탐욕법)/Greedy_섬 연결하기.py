@@ -43,6 +43,10 @@ def solution(n, costs):
 n = 4
 costs = [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]
 print(solution(n,costs))
-
-
+n = 5
+costs = [[0, 1, 5], [1, 2, 3], [2, 3, 3], [3, 1, 2], [3, 0, 4], [2, 4, 6], [4, 0, 7]]
+print(solution(n,costs))
+n = 5
+costs = [[0, 1, 1], [3, 4, 1], [1, 2, 2], [2, 3, 4]]
+print(solution(n,costs))
 # result : 12 / 100
