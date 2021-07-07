@@ -1,4 +1,4 @@
-###Greedy_섬연결하기###
+###Greedy_큰 수의 법칙(이것이 코딩테스트다)###
 
 ## my algorithm ##
 #num배열의 수들을 대상으로, 총 m회 더하여 가장 큰 수를 만들어야 한다.
@@ -28,6 +28,22 @@ def bigNum(n,m,k,num):
     key = m%k
     answer += a * (m-key)
     answer += b * key
+    return answer
+
+#다음은 정렬을 시행한 후 보통의 방식대로, 가장 큰 수부터 차례로 반복을 통해 더하며 해결해 가는 과정이다.
+#이에 대한 시간복잡도는, 우선 정렬에 대한 nlogn 시간 // 반복에서의 시간은, M의 크기에 비례하여 효울적이지 못하게 커질 수 있다.
+
+def bigNum2(n,m,k,num):
+    answer = 0
+    num.sort(reverse = True) #num배열 내림차순 정렬
+    while True:
+        for i in range(k): #한 수에 대해 k회까지 반복 제어
+            if m==0:break #총 더하는 횟수(m)가 끝나면 반복 종료
+            answer += num[0] #m이 0이 아니라면 가장 큰수 k회만큼 덧셈 반복
+            m-=1 #더해지는 횟수 1 차감
+        if m==0:break #k회 반복 후 총 더하는 남여 횟수가 없으면 반복 종료
+        answer += num[1] #그렇지 않으면 두번쨰로 큰 수 한번 더하기(휴게소)
+        m-=1 #더해지는 횟수 1 차감 후 반복
     return answer
 
 n, m, k = [int(x) for x in input().split()]
