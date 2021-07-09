@@ -17,7 +17,12 @@
 
 def remote_con(n,k):
     answer = 0
-    key = k - n #조작해야하는 온도
+    ##추가 : 목표 온도 k가 현재 온도 n보다 낮은 경우도 따져야함!
+    #조작해야하는 온도
+    key = 0
+    if k>n : key = k-n
+    else : key = n-k
+
     while key>0: #key가 0이 될 때까지 반복
         #key가 10보다 크면, 항상 10단위로 조작해야 횟수를 크게 감소시킬 수 있다.
         if key >= 10:
