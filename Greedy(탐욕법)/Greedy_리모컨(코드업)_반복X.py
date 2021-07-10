@@ -16,6 +16,9 @@ def remote_con(n,k):
     key = 0
     if k>n : key = k-n
     else : key = n-k
+
+    ###반복 없이 조건을 따져가며 key를 차감시키며 한 번의 round로 진행!!###
+
     #key가 10보다 크면, 항상 10단위로 조작해야 횟수를 크게 감소시킬 수 있다.
     if key >= 10:
         answer += key // 10
