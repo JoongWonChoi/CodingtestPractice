@@ -23,10 +23,11 @@ def princess_garden(n,flowers):
     answer = 0
     #현재 피어있는 꽃의 종료 날짜
     mon, day = 3, 1 #초기값은 항상 피어있어야 할 날짜의 시작점인 3월 1일로 설정
+    tmp = 0
     while mon<12: #11월 30일까지만 꽃이 정원에 있으면 됨.
         fin_mon, fin_day = 0, 0 # 바뀔 꽃의 종료 날짜
         #현재 피어있는 꽃의 종료 이전에 피어 있으면서, 가장 종료 시점이 늦은(큰)꽃 탐색
-        for k in range(n):
+        for k in range(len(flowers)):
             #항상 정원에 꽃이 있기 위해서는 현재 정원에 있는 꽃이 지기 전에 피어있는 꽃이 있어야 함.
             #다음에 올 꽃은 항상 이전 꽃의 종료 달과 일 이전에 피어있어야 함. and연산을 사용하면 안됨!
             if flowers[k][0] <= mon:
@@ -37,15 +38,18 @@ def princess_garden(n,flowers):
                     elif flowers[k][2] == fin_mon: #month가 같다면 day가 더 큰 꽃 선택.
                         if flowers[k][3] > fin_day:
                             fin_mon, fin_day = flowers[k][2], flowers[k][3]
+                        tmp = k
+
         # 현재 피어있는 꽃의 종료 시점을 최신화
         mon, day = fin_mon, fin_day
         print(mon,day)
         answer += 1
+        flowers = flowers[tmp+1:]
     return answer
 '''
 n = int(input())
 flowers = []
-for i in range(n):
+for i in range(n): 
     flowers.append([int(x) for x in input().split()])
 print(flowers)
 '''
