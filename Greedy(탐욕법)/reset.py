@@ -19,9 +19,6 @@ def git_stash_pop():
 =======
 '''practice git stash pop'''
 
-def non_cherry_picked():
-    print("not in cherry-picked.")
-    return
 
 def cherry_picked():
     print("in cherry-picked.")
