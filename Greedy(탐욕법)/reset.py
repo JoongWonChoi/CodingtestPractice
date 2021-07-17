@@ -5,3 +5,7 @@ def sum(a,b):
 
 def testsum(a,b):
     return a+b
+
+def pr_stash():
+    print("should be in master branch")
+    return
