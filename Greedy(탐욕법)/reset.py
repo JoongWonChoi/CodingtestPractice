@@ -24,5 +24,10 @@ def cherry_picked():
     print("in cherry-picked.")
     return
 
+def pr_reset():
+    n = 0
+    combine = 0
+    return
+
 
 >>>>>>> f81ca50 (Git -practice --Add cherry picked function)
