@@ -29,5 +29,7 @@ def pr_reset():
     combine = 0
     return
 
+print("조수빈 바보")
+
 
 >>>>>>> f81ca50 (Git -practice --Add cherry picked function)
